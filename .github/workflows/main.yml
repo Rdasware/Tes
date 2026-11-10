@@ -1,1 +1,14 @@
-Trading 
+name: Windows Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Check Windows
+        run: |
+          systeminfo
+          Get-ComputerInfo | Select-Object WindowsProductName
+        shell: powershell
